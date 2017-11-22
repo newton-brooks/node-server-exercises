@@ -1,5 +1,5 @@
 const http = require('http');
-const fs = require('fs');
+// const fs = require('fs');
 const port = 3000;
 const url = require('url')
 
@@ -10,6 +10,7 @@ const url = require('url')
 const server = http.createServer((req, res) => {
     res.statusCode = 200;
     res.writeHead(200, {'Content-Type': 'text/html'});
+    console.log(url.parse(req.url).query)
     if(req.url.includes('name=') && req.url.slice(7)) {
         res.write(`<!doctype>
             <head>
@@ -25,4 +26,8 @@ const server = http.createServer((req, res) => {
         res.end() 
     }
 }).listen(port);
+
+
+
+if(length)
 
